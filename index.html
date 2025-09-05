@@ -1,31 +1,81 @@
-const puppeteer = require('puppeteer');
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Dados da Empresa – CNPJ 15.364.434/0001‑48</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    button { margin: 5px 0; }
+    .section { margin: 10px 0; padding: 10px; border: 1px solid #ccc; display: none; }
+    .section h2 { margin-top: 0; }
+  </style>
+</head>
+<body>
+  <h1>Empresa: Camisas Brasil Comercio de Artigos do Vestuario LTDA</h1>
 
-(async () => {
-  const cnpj = '15.364.434/0001-48';
-  const url = 'https://solucoes.receita.fazenda.gov.br/Servicos/cnpjreva/Cnpjreva_Solicitacao.asp';
+  <button onclick="toggle('dadosBasicos')">Mostrar/Ocultar Dados Básicos</button>
+  <div id="dadosBasicos" class="section">
+    <h2>Dados Básicos</h2>
+    <p><strong>CNPJ:</strong> 15.364.434/0001‑48</p>
+    <p><strong>Razão Social:</strong> Camisas Brasil Comercio de Artigos do Vestuario LTDA</p>
+    <p><strong>Nome Fantasia:</strong> Camisas Brasil</p>
+    <p><strong>Data de Abertura:</strong> 13/04/2012</p>
+    <p><strong>Porte:</strong> Micro Empresa</p>
+    <p><strong>Natureza Jurídica:</strong> Sociedade Empresária Limitada</p>
+    <p><strong>Capital Social:</strong> R$ 20.000,00</p>
+    <p><strong>Tipo:</strong> Matriz</p>
+  </div>
 
-  const browser = await puppeteer.launch({ headless: false });
-  const page = await browser.newPage();
-  await page.goto(url, { waitUntil: 'networkidle2' });
+  <button onclick="toggle('situacao')">Mostrar/Ocultar Situação Cadastral</button>
+  <div id="situacao" class="section">
+    <h2>Situação Cadastral</h2>
+    <p><strong>Situação:</strong> Baixada</p>
+    <p><strong>Data da Situação:</strong> 22/05/2018</p>
+    <p><strong>Motivo:</strong> Extinção por Encerramento Liquidação Voluntária</p>
+    <p><strong>Opção Simples:</strong> Não (Exclusão Simples: 01/01/2013 - 22/05/2018)</p>
+  </div>
 
-  // Preenche o campo do CNPJ
-  await page.type('input[name="cnpj"]', cnpj);
+  <button onclick="toggle('enderecos')">Mostrar/Ocultar Endereço</button>
+  <div id="enderecos" class="section">
+    <h2>Endereço</h2>
+    <p><strong>Logradouro:</strong> Av. Bruxelas, 184, Loja B</p>
+    <p><strong>Bairro:</strong> Bonsucesso</p>
+    <p><strong>Município:</strong> Rio de Janeiro – RJ</p>
+    <p><strong>CEP:</strong> 21.041‑000</p>
+  </div>
 
-  // Se precisar, interaja com o reCAPTCHA manualmente:
-  console.log('Por favor, resolva o captcha manualmente na página aberta');
+  <button onclick="toggle('contatos')">Mostrar/Ocultar Contatos</button>
+  <div id="contatos" class="section">
+    <h2>Contatos</h2>
+    <p><strong>Telefones:</strong></p>
+    <ul>
+      <li>(24) 2243‑8762</li>
+      <li>(24) 2243‑7829</li>
+    </ul>
+  </div>
 
-  // Aguardar o usuário clicar em "Consultar"
-  await page.waitForFunction(
-    () => document.querySelector('#btnConsultar') && document.querySelector('#btnConsultar').disabled === false,
-    { timeout: 300000 } // espera até 5 minutos
-  );
+  <button onclick="toggle('atividades')">Mostrar/Ocultar Atividades (CNAE)</button>
+  <div id="atividades" class="section">
+    <h2>Atividades – CNAE</h2>
+    <p><strong>Atividade Principal:</strong> 47.81‑4‑00 – Comércio varejista de artigos do vestuário e acessórios</p>
+    <p>Descrição: Comércio varejista de vestuário, acessórios, uniformes, meias, chapéus, roupas para animais, etc.</p>
+  </div>
 
-  await page.click('#btnConsultar');
-  await page.waitForSelector('#resultado', { timeout: 60000 });
+  <button onclick="toggle('sócios')">Mostrar/Ocultar Sócios e Administradores</button>
+  <div id="sócios" class="section">
+    <h2>Quadro de Sócios e Administradores</h2>
+    <ul>
+      <li>Hugo Oliveira Vieira – Sócio‑Administrador (desde 13/04/2012)</li>
+      <li>Douglas de Oliveira Rocha – Sócio (desde 13/04/2012)</li>
+    </ul>
+  </div>
 
-  // Captura resultado
-  const resultado = await page.evaluate(() => document.querySelector('#resultado').innerText);
-  console.log('Resultado da consulta:', resultado);
+  <script>
+    function toggle(id) {
+      const el = document.getElementById(id);
+      el.style.display = el.style.display === 'none' ? 'block' : 'none';
+    }
+  </script>
 
-  await browser.close();
-})();
+</body>
+</html>
