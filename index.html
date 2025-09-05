@@ -1,0 +1,31 @@
+const puppeteer = require('puppeteer');
+
+(async () => {
+  const cnpj = '15.364.434/0001-48';
+  const url = 'https://solucoes.receita.fazenda.gov.br/Servicos/cnpjreva/Cnpjreva_Solicitacao.asp';
+
+  const browser = await puppeteer.launch({ headless: false });
+  const page = await browser.newPage();
+  await page.goto(url, { waitUntil: 'networkidle2' });
+
+  // Preenche o campo do CNPJ
+  await page.type('input[name="cnpj"]', cnpj);
+
+  // Se precisar, interaja com o reCAPTCHA manualmente:
+  console.log('Por favor, resolva o captcha manualmente na página aberta');
+
+  // Aguardar o usuário clicar em "Consultar"
+  await page.waitForFunction(
+    () => document.querySelector('#btnConsultar') && document.querySelector('#btnConsultar').disabled === false,
+    { timeout: 300000 } // espera até 5 minutos
+  );
+
+  await page.click('#btnConsultar');
+  await page.waitForSelector('#resultado', { timeout: 60000 });
+
+  // Captura resultado
+  const resultado = await page.evaluate(() => document.querySelector('#resultado').innerText);
+  console.log('Resultado da consulta:', resultado);
+
+  await browser.close();
+})();
