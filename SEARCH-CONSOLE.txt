@@ -1,0 +1,16 @@
+GOOGLE SEARCH CONSOLE
+
+Final URL: https://account-jc04.onrender.com
+
+1. Upload all files to the ROOT of the connected GitHub repository.
+2. Wait for Render to show Live.
+3. Test /robots.txt and /sitemap.xml.
+4. Add https://account-jc04.onrender.com as a URL-prefix property in Search Console.
+5. Choose HTML file verification.
+6. Upload Google's exact googleXXXXXXXX.html file to the ROOT beside index.html.
+7. Commit. Render auto-deploys.
+8. Confirm https://account-jc04.onrender.com/googleXXXXXXXX.html opens.
+9. Verify.
+10. Submit sitemap.xml.
+
+Keep the verification file after verification.

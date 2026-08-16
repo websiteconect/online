@@ -1,0 +1,21 @@
+SEO KEYWORD MAP
+
+/microsoft-advertising/ -> Microsoft Advertising: Existing Advertiser Guide
+/microsoft-ads/ -> Microsoft Ads Help for Existing Advertisers
+/bing-ads/ -> Bing Ads Help: Microsoft Advertising Resources for Existing Users
+/microsoft-advertising-editor/ -> Microsoft Advertising Editor: Existing User Guide
+/microsoft-advertising-dashboard/ -> Microsoft Advertising Dashboard: Where to Find Key Account Areas
+/microsoft-ads-not-spending/ -> Microsoft Ads Not Spending: What to Check
+/microsoft-ads-zero-impressions/ -> Microsoft Ads Zero Impressions: Troubleshooting Checklist
+/microsoft-ads-payment-method-not-working/ -> Microsoft Ads Payment Method Not Working: What to Check
+/microsoft-ads-card-declined/ -> Microsoft Ads Card Declined: Payment Troubleshooting
+/microsoft-ads-account-suspended/ -> Microsoft Ads Account Suspended: What to Do Next
+/microsoft-ads-suspension-appeal/ -> Microsoft Ads Suspension Appeal: How to Prepare
+/microsoft-ads-identity-verification-failed/ -> Microsoft Ads Identity Verification Failed: What to Review
+/microsoft-ads-invoice/ -> Microsoft Ads Invoice: Where to Find Billing Documents
+/microsoft-ads-refund/ -> Microsoft Ads Refund: What to Review Before Contacting Support
+/microsoft-ads-uet-tag-not-working/ -> Microsoft Ads UET Tag Not Working: Troubleshooting Guide
+/microsoft-ads-conversion-tracking-not-working/ -> Microsoft Ads Conversion Tracking Not Working: What to Check
+/microsoft-ads-google-ads-import-not-working/ -> Microsoft Ads Google Ads Import Not Working: What to Check
+/microsoft-ads-editor-not-working/ -> Microsoft Ads Editor Not Working: Troubleshooting Guide
+/microsoft-merchant-center-feed-error/ -> Microsoft Merchant Center Feed Error: What to Check
